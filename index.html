@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HyperDCA | Multi-asset portfolio agent</title>
+    <meta
+      name="description"
+      content="HyperDCA helps you deploy capital across stocks, crypto, commodities, ETFs, and indexes with an agent that suggests while you stay in control."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E40AF'/%3E%3Cpath d='M20 17h7v12h10V17h7v30h-7V35H27v12h-7z' fill='white'/%3E%3C/svg%3E"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="HyperDCA home">
+          <span class="brand-mark">H</span>
+          <span>HyperDCA</span>
+        </a>
+        <div class="nav-links">
+          <a href="#strategies">Strategies</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#waitlist">Free beta</a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Free beta · Multi-asset portfolio agent</p>
+          <h1>Invest globally. Let the agent suggest. You decide.</h1>
+          <p class="subcopy">
+            Deploy capital across stocks, crypto, and commodities. The agent spots
+            opportunities. You approve every trade. Always your call.
+          </p>
+          <form class="email-form" id="hero-form">
+            <label for="hero-email">Your email</label>
+            <div class="email-row">
+              <input id="hero-email" name="email" type="email" placeholder="you@email.com" required />
+              <button type="submit">Join free beta</button>
+            </div>
+            <p class="form-status" aria-live="polite"></p>
+            <div class="followup-questions" hidden>
+              <p class="followup-title">Quick — help us tailor your experience</p>
+              <label class="followup-label" for="hero-country">Where are you based?</label>
+              <select id="hero-country" class="followup-select" required>
+                <option value="" disabled selected>Select your country</option>
+                <option>United States</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>United Kingdom</option>
+                <option>Switzerland</option>
+                <option>South Korea</option>
+                <option>Japan</option>
+                <option>Singapore</option>
+                <option>United Arab Emirates</option>
+                <option>Canada</option>
+                <option>India</option>
+                <option>Australia</option>
+                <option>Brazil</option>
+                <option>Other</option>
+              </select>
+              <label class="followup-label">Which markets are you interested in?</label>
+              <div class="market-chips">
+                <label class="market-chip"><input type="checkbox" value="US Stocks" /><span>US Stocks</span></label>
+                <label class="market-chip"><input type="checkbox" value="EU Stocks" /><span>EU Stocks</span></label>
+                <label class="market-chip"><input type="checkbox" value="Korean Stocks" /><span>Korean Stocks</span></label>
+                <label class="market-chip"><input type="checkbox" value="Index Funds" /><span>Index Funds</span></label>
+                <label class="market-chip"><input type="checkbox" value="Commodities" /><span>Commodities</span></label>
+                <label class="market-chip"><input type="checkbox" value="Energy Market" /><span>Energy Market</span></label>
+                <label class="market-chip"><input type="checkbox" value="Oil & Gas" /><span>Oil & Gas</span></label>
+                <label class="market-chip"><input type="checkbox" value="Crypto" /><span>Crypto</span></label>
+                <label class="market-chip"><input type="checkbox" value="Bitcoin" /><span>Bitcoin</span></label>
+                <label class="market-chip"><input type="checkbox" value="Semiconductors" /><span>Semiconductors</span></label>
+              </div>
+              <button type="button" class="followup-submit">Submit preferences</button>
+              <p class="followup-status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+
+        <div id="strategies" class="product-preview" aria-label="HyperDCA strategy preview">
+          <div class="preview-top">
+            <span></span><span></span><span></span>
+            <div>
+              <strong>Trending strategies to follow</strong>
+              <p>Click to see composition, performance, and follow updates</p>
+            </div>
+          </div>
+          <div class="basket-grid">
+            <article class="basket-card">
+              <div class="basket-head">
+                <div>
+                  <p>0xCipher.hl</p>
+                  <h2>Majors Momentum</h2>
+                </div>
+                <strong>+42.8%</strong>
+              </div>
+              <svg viewBox="0 0 300 92" class="sparkline">
+                <path d="M6 72 C40 48 61 58 88 34 S143 18 176 42 218 70 250 40 282 20 294 28" />
+              </svg>
+              <div class="chips">
+                <span>BTC 35%</span><span>ETH 28%</span><span>SOL 22%</span><span>HYPE 15%</span>
+              </div>
+              <button type="button" class="follow-button">Follow</button>
+            </article>
+
+            <article class="basket-card secondary">
+              <div class="basket-head">
+                <div>
+                  <p>Data-center beta</p>
+                  <h2>AI Infra</h2>
+                </div>
+                <strong>+28.6%</strong>
+              </div>
+              <svg viewBox="0 0 300 92" class="sparkline">
+                <path d="M6 66 C42 58 58 40 91 44 S147 16 183 27 222 55 254 30 280 22 294 16" />
+              </svg>
+              <div class="chips">
+                <span>NVDA 40%</span><span>AMD 25%</span><span>TSLA 20%</span><span>HYPE 15%</span>
+              </div>
+              <button type="button" class="follow-button">Follow</button>
+            </article>
+
+            <article class="basket-card tertiary">
+              <div class="basket-head">
+                <div>
+                  <p>Macro metals desk</p>
+                  <h2>Copper Macro</h2>
+                </div>
+                <strong>+17.2%</strong>
+              </div>
+              <svg viewBox="0 0 300 92" class="sparkline">
+                <path d="M6 58 C38 44 64 50 94 38 S150 44 181 30 224 22 255 34 281 42 294 31" />
+              </svg>
+              <div class="chips">
+                <span>COPPER 35%</span><span>GOLD 25%</span><span>OIL 20%</span><span>BTC 12%</span><span>HYPE 8%</span>
+              </div>
+              <button type="button" class="follow-button">Follow</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-strip" aria-label="HyperDCA beta benefits">
+        <article class="feature-card">
+          <p>Multi-asset access</p>
+          <h2>Invest anywhere, from anywhere</h2>
+          <span>Stocks. Crypto. Commodities. ETFs. All on one platform. No nationality restrictions.</span>
+        </article>
+        <article class="feature-card">
+          <p>Transparent strategy</p>
+          <h2>See every move before it happens</h2>
+          <span>Agent proposes. You see the reasoning. You approve or skip. Full transparency, always.</span>
+        </article>
+        <article class="feature-card">
+          <p>AI-powered insight</p>
+          <h2>Market intelligence tied to your portfolio</h2>
+          <span>News, alerts, and opportunities tailored to your holdings. Stay informed. Never overwhelmed.</span>
+        </article>
+      </section>
+
+      <section id="how-it-works" class="workflow-section">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>We handle the complexity. You stay in control.</h2>
+        </div>
+        <div class="workflow-grid">
+          <article><span>01</span><h3>Set your conviction</h3><p>I want exposure to AI, oil, and Bitcoin.</p></article>
+          <article><span>02</span><h3>Agent suggests trades</h3><p>Gold is oversold. Buy here?</p></article>
+          <article><span>03</span><h3>You review and approve</h3><p>This matches my thesis. Yes.</p></article>
+          <article><span>04</span><h3>Portfolio auto-updates</h3><p>Track performance in real-time.</p></article>
+        </div>
+      </section>
+
+      <section id="baskets" class="chart-section">
+        <div>
+          <p class="eyebrow">Portfolio control</p>
+          <h2>Monitor performance across any timeframe.</h2>
+          <p class="subcopy small">
+            Follow pro traders. Copy their moves. Keep full control of your portfolio.
+          </p>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title-row">
+            <div>
+              <p>AI Infra basket</p>
+              <h3>Company levels over 1M</h3>
+            </div>
+            <strong>Indexed at 100</strong>
+          </div>
+          <div class="periods">
+            <span>1D</span><span>7D</span><span class="active">1M</span><span>1Y</span><span>Custom</span>
+          </div>
+          <svg viewBox="0 0 760 260" class="big-chart">
+            <line x1="76" x2="700" y1="42" y2="42" />
+            <line x1="76" x2="700" y1="92" y2="92" />
+            <line x1="76" x2="700" y1="142" y2="142" />
+            <line x1="76" x2="700" y1="192" y2="192" />
+            <text x="56" y="46">140</text>
+            <text x="56" y="96">125</text>
+            <text x="56" y="146">110</text>
+            <text x="56" y="196">95</text>
+            <text x="76" y="238">Jun 1</text>
+            <text x="282" y="238">Jun 10</text>
+            <text x="492" y="238">Jun 20</text>
+            <text x="676" y="238">Now</text>
+            <path class="line-nvda" d="M76 178 C128 148 160 162 212 118 S318 58 384 88 472 138 542 82 638 42 700 54" />
+            <path class="line-amd" d="M76 190 C136 176 170 154 232 146 S340 108 408 124 492 160 560 124 640 96 700 106" />
+            <path class="line-tsla" d="M76 166 C134 190 178 126 230 146 S332 168 390 118 492 96 562 136 636 112 700 88" />
+            <circle class="dot-nvda" cx="700" cy="54" r="5" />
+            <circle class="dot-amd" cx="700" cy="106" r="5" />
+            <circle class="dot-tsla" cx="700" cy="88" r="5" />
+            <text class="label-nvda" x="710" y="58">NVDA 136</text>
+            <text class="label-amd" x="710" y="110">AMD 121</text>
+            <text class="label-tsla" x="710" y="92">TSLA 126</text>
+          </svg>
+          <div class="company-legend">
+            <span><i class="nvda"></i>NVDA</span>
+            <span><i class="amd"></i>AMD</span>
+            <span><i class="tsla"></i>TSLA</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="agent" class="agent-panel">
+        <div class="agent-panel-header">
+          <p class="eyebrow">AI Agent</p>
+          <h2>AI Agent</h2>
+          <p class="agent-desc">
+            Ask the assistant in Telegram or in-app. It can explain allocations, compare
+            baskets and summarize risk. Trading actions still require browser confirmation.
+          </p>
+        </div>
+        <div class="agent-examples">
+          <code>/ask Why is Majors Momentum diversified?</code>
+          <code>/ask Compare Majors Momentum with Copper Macro</code>
+          <code>/ask What could go wrong with this basket?</code>
+        </div>
+        <p class="context-loaded">Context loaded: 3 drivers, 4 assets, balanced score.</p>
+        <div class="chat-widget" id="chat-widget">
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-bubble bot">Hi! I have context on Majors Momentum, AI Infra, and Copper Macro. Ask me about allocations, risk, or comparisons.</div>
+          </div>
+          <form class="chat-input-row" id="chat-form">
+            <input id="chat-input" type="text" placeholder="Ask about a basket..." autocomplete="off" />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="waitlist" class="waitlist-section">
+        <div>
+          <p class="eyebrow">Free beta</p>
+          <h2>Join the first HyperDCA users.</h2>
+          <p>
+            Get access when the multi-asset portfolio agent opens. No newsletter noise.
+          </p>
+        </div>
+        <form class="email-form">
+          <label for="email">Your email</label>
+          <div class="email-row">
+            <input id="email" name="email" type="email" placeholder="natan@email.com" required />
+            <button type="submit">Join free beta</button>
+          </div>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+          <div class="followup-questions" hidden>
+            <p class="followup-title">Quick — help us tailor your experience</p>
+            <label class="followup-label" for="waitlist-country">Where are you based?</label>
+            <select id="waitlist-country" class="followup-select" required>
+              <option value="" disabled selected>Select your country</option>
+              <option>United States</option>
+              <option>France</option>
+              <option>Germany</option>
+              <option>United Kingdom</option>
+              <option>Switzerland</option>
+              <option>South Korea</option>
+              <option>Japan</option>
+              <option>Singapore</option>
+              <option>United Arab Emirates</option>
+              <option>Canada</option>
+              <option>India</option>
+              <option>Australia</option>
+              <option>Brazil</option>
+              <option>Other</option>
+            </select>
+            <label class="followup-label">Which markets are you interested in?</label>
+            <div class="market-chips">
+              <label class="market-chip"><input type="checkbox" value="US Stocks" /><span>US Stocks</span></label>
+              <label class="market-chip"><input type="checkbox" value="EU Stocks" /><span>EU Stocks</span></label>
+              <label class="market-chip"><input type="checkbox" value="Korean Stocks" /><span>Korean Stocks</span></label>
+              <label class="market-chip"><input type="checkbox" value="Index Funds" /><span>Index Funds</span></label>
+              <label class="market-chip"><input type="checkbox" value="Commodities" /><span>Commodities</span></label>
+              <label class="market-chip"><input type="checkbox" value="Energy Market" /><span>Energy Market</span></label>
+              <label class="market-chip"><input type="checkbox" value="Oil & Gas" /><span>Oil & Gas</span></label>
+              <label class="market-chip"><input type="checkbox" value="Crypto" /><span>Crypto</span></label>
+              <label class="market-chip"><input type="checkbox" value="Bitcoin" /><span>Bitcoin</span></label>
+              <label class="market-chip"><input type="checkbox" value="Semiconductors" /><span>Semiconductors</span></label>
+            </div>
+            <button type="button" class="followup-submit">Submit preferences</button>
+            <p class="followup-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <p class="credibility-line">
+        Built on Hyperliquid. Non-custodial. Revenue-generating from day one.
+        Your funds stay in your wallet. One signature. Zero withdrawal risk.
+      </p>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
