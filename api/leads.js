@@ -19,6 +19,18 @@ const SEED_LEADS = [
   { email: "krieg9@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:05:00.000Z" },
   { email: "maria.faferska@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:06:00.000Z" },
   { email: "aelmessaoudi.haj@gmail.com", country: "France", markets: ["EU Stocks", "Oil & Gas", "Crypto", "Bitcoin"], createdAt: "2026-06-20T17:07:00.000Z" },
+  { email: "maroua1.batane@gmail.com", country: "France", markets: ["US Stocks", "EU Stocks", "Commodities", "Energy Market"], createdAt: "2026-06-21T10:55:00.000Z" },
+  { email: "menkenleiden@gmail.com", country: "Netherlands", markets: ["US Stocks", "EU Stocks", "Korean Stocks", "Index Funds", "Commodities", "Energy Market", "Oil & Gas", "Crypto", "Bitcoin", "Semiconductors"], createdAt: "2026-06-21T10:57:00.000Z" },
+  { email: "marcxdart@gmail.com", country: "France", markets: ["US Stocks", "Index Funds", "Crypto"], createdAt: "2026-06-21T11:00:00.000Z" },
+  { email: "absingh3010@gmail.com", country: null, markets: [], createdAt: "2026-06-20T16:50:00.000Z" },
+  { email: "emilieggn999@gmail.com", country: null, markets: [], createdAt: "2026-06-20T16:51:00.000Z" },
+  { email: "hajarelganbouri7@gmail.com", country: null, markets: [], createdAt: "2026-06-20T16:52:00.000Z" },
+  { email: "heinel.storm@gmail.com", country: null, markets: [], createdAt: "2026-06-20T16:53:00.000Z" },
+  { email: "iraniantester@minuteaft.com", country: null, markets: [], createdAt: "2026-06-20T16:54:00.000Z" },
+  { email: "lilianna742@gmail.com", country: null, markets: [], createdAt: "2026-06-20T16:55:00.000Z" },
+  { email: "natan.lasar@telecom-sudparis.eu", country: "France", markets: ["US Stocks", "EU Stocks", "Commodities", "Bitcoin", "Semiconductors"], createdAt: "2026-06-20T16:56:00.000Z" },
+  { email: "pompejordan1@gmail.com", country: null, markets: [], createdAt: "2026-06-20T16:57:00.000Z" },
+  { email: "s8.cerise@gmail.com", country: "France", markets: ["EU Stocks"], createdAt: "2026-06-20T16:58:00.000Z" },
 ];
 
 async function getLeads() {
