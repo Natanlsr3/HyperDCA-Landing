@@ -5,31 +5,20 @@ const BLOB_PATH = "leads.json";
 // Seed data — leads captured before persistent storage was added.
 // These are always merged in so they can never be lost.
 const SEED_LEADS = [
-  {
-    email: "derson.ramos@gmail.com",
-    country: null,
-    markets: [],
-    createdAt: "2026-06-21T10:21:58.369Z",
-  },
-  {
-    email: "natan.lasar3@gmail.com",
-    country: "France",
-    markets: ["US Stocks", "EU Stocks", "Index Funds", "Crypto", "Semiconductors"],
-    createdAt: "2026-06-21T10:23:05.912Z",
-    updatedAt: "2026-06-21T10:23:17.132Z",
-  },
-  {
-    email: "storm.heinel@imt-bs.eu",
-    country: null,
-    markets: [],
-    createdAt: "2026-06-21T10:37:45.853Z",
-  },
-  {
-    email: "akpabeyc@gmail.com",
-    country: null,
-    markets: [],
-    createdAt: "2026-06-21T10:39:40.659Z",
-  },
+  { email: "derson.ramos@gmail.com", country: null, markets: [], createdAt: "2026-06-21T10:21:58.369Z" },
+  { email: "natan.lasar3@gmail.com", country: "France", markets: ["US Stocks", "EU Stocks", "Index Funds", "Crypto", "Semiconductors"], createdAt: "2026-06-21T10:23:05.912Z" },
+  { email: "storm.heinel@imt-bs.eu", country: null, markets: [], createdAt: "2026-06-21T10:37:45.853Z" },
+  { email: "akpabeyc@gmail.com", country: null, markets: [], createdAt: "2026-06-21T10:39:40.659Z" },
+  { email: "zeekogg@gmail.com", country: null, markets: [], createdAt: "2026-06-21T10:43:33.325Z" },
+  { email: "shivamsah.promail@gmail.com", country: null, markets: [], createdAt: "2026-06-21T10:50:43.563Z" },
+  { email: "spwnstudio@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:00:00.000Z" },
+  { email: "tiagoduraogo+abhisdad@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:01:00.000Z" },
+  { email: "isaac.t2805@gmail.com", country: "France", markets: ["Oil & Gas", "Crypto", "Bitcoin"], createdAt: "2026-06-20T17:02:00.000Z" },
+  { email: "stephan.vermeulen.25@ucl.ac.uk", country: "France", markets: ["US Stocks"], createdAt: "2026-06-20T17:03:00.000Z" },
+  { email: "galina.lazareva2000@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:04:00.000Z" },
+  { email: "krieg9@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:05:00.000Z" },
+  { email: "maria.faferska@gmail.com", country: null, markets: [], createdAt: "2026-06-20T17:06:00.000Z" },
+  { email: "aelmessaoudi.haj@gmail.com", country: "France", markets: ["EU Stocks", "Oil & Gas", "Crypto", "Bitcoin"], createdAt: "2026-06-20T17:07:00.000Z" },
 ];
 
 async function getLeads() {
