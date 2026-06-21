@@ -64,6 +64,8 @@ module.exports = async (req, res) => {
   if (req.method === "POST") {
     const { email, country, markets } = req.body || {};
     if (!email) return res.status(400).json({ error: "email required" });
+    if (!country) return res.status(400).json({ error: "country required" });
+    if (!Array.isArray(markets) || markets.length === 0) return res.status(400).json({ error: "select at least one market" });
 
     const leads = await getLeads();
     if (leads.some((l) => l.email === email)) {
@@ -72,8 +74,8 @@ module.exports = async (req, res) => {
 
     leads.push({
       email,
-      country: country || null,
-      markets: Array.isArray(markets) ? markets : [],
+      country,
+      markets,
       createdAt: new Date().toISOString(),
     });
     await saveLeads(leads);
