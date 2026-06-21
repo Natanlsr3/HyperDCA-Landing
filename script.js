@@ -2,21 +2,30 @@ function setupForm(formEl) {
   if (!formEl) return;
   var input = formEl.querySelector('input[type="email"]');
   var status = formEl.querySelector(".form-status");
-  var emailRow = formEl.querySelector(".email-row");
-  var followup = formEl.querySelector(".followup-questions");
-  var savedEmail = null;
+  var countrySelect = formEl.querySelector("select");
+  var checkboxes = formEl.querySelectorAll('.market-chip input[type="checkbox"]');
 
   formEl.addEventListener("submit", function (event) {
     event.preventDefault();
     var email = input.value.trim();
     if (!email) return;
 
+    var country = countrySelect ? countrySelect.value : null;
+    if (country === "") country = null;
+
+    var markets = [];
+    checkboxes.forEach(function (cb) {
+      if (cb.checked) markets.push(cb.value);
+    });
+
+    var submitBtn = formEl.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
     status.textContent = "Submitting...";
 
     fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email }),
+      body: JSON.stringify({ email: email, country: country, markets: markets }),
     })
       .then(function (r) { return r.json(); })
       .then(function (data) {
@@ -25,77 +34,16 @@ function setupForm(formEl) {
         } else {
           status.textContent = "You're in! We'll reach out when the beta opens.";
         }
-        savedEmail = email;
-        emailRow.classList.add("done");
-        if (followup) {
-          followup.hidden = false;
-        }
+        submitBtn.disabled = true;
+        input.disabled = true;
+        if (countrySelect) countrySelect.disabled = true;
+        checkboxes.forEach(function (cb) { cb.disabled = true; });
       })
       .catch(function () {
         status.textContent = "Something went wrong. Try again.";
+        submitBtn.disabled = false;
       });
   });
-
-  // Follow-up preferences submission
-  if (followup) {
-    var submitBtn = followup.querySelector(".followup-submit");
-    var followupStatus = followup.querySelector(".followup-status");
-    var countrySelect = followup.querySelector("select");
-    var checkboxes = followup.querySelectorAll('.market-chip input[type="checkbox"]');
-
-    submitBtn.addEventListener("click", function () {
-      var country = countrySelect.value;
-      if (!country) {
-        followupStatus.textContent = "Please select your country.";
-        followupStatus.style.color = "#DC2626";
-        return;
-      }
-
-      var markets = [];
-      checkboxes.forEach(function (cb) {
-        if (cb.checked) markets.push(cb.value);
-      });
-
-      if (markets.length === 0) {
-        followupStatus.textContent = "Please select at least one market.";
-        followupStatus.style.color = "#DC2626";
-        return;
-      }
-
-      submitBtn.disabled = true;
-      followupStatus.textContent = "Saving...";
-      followupStatus.style.color = "";
-
-      fetch("/api/leads", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: savedEmail,
-          country: country,
-          markets: markets,
-        }),
-      })
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data.ok) {
-            followupStatus.style.color = "";
-            followupStatus.textContent = "Thanks! We'll personalize your experience.";
-            submitBtn.style.display = "none";
-            countrySelect.disabled = true;
-            checkboxes.forEach(function (cb) { cb.disabled = true; });
-          } else {
-            followupStatus.textContent = data.error || "Something went wrong.";
-            followupStatus.style.color = "#DC2626";
-            submitBtn.disabled = false;
-          }
-        })
-        .catch(function () {
-          followupStatus.textContent = "Connection error. Try again.";
-          followupStatus.style.color = "#DC2626";
-          submitBtn.disabled = false;
-        });
-    });
-  }
 }
 
 setupForm(document.querySelector("#hero-form"));

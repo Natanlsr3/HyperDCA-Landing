@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
   if (req.method === "OPTIONS") return res.status(200).end();
 
   if (req.method === "POST") {
-    const { email } = req.body || {};
+    const { email, country, markets } = req.body || {};
     if (!email) return res.status(400).json({ error: "email required" });
 
     const leads = await getLeads();
@@ -83,8 +83,8 @@ module.exports = async (req, res) => {
 
     leads.push({
       email,
-      country: null,
-      markets: [],
+      country: country || null,
+      markets: Array.isArray(markets) ? markets : [],
       createdAt: new Date().toISOString(),
     });
     await saveLeads(leads);
