@@ -89,7 +89,7 @@ module.exports = async (req, res) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "HyperDCA <onboarding@resend.dev>",
+          from: "HyperDCA <hello@mikevirtualcoach.com>",
           to: [email],
           subject: "Welcome to HyperDCA — Launching tomorrow!",
           html: [

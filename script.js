@@ -18,6 +18,20 @@ function setupForm(formEl) {
       if (cb.checked) markets.push(cb.value);
     });
 
+    // Validate required fields
+    if (!country) {
+      status.textContent = "Please select your country.";
+      status.style.color = "#DC2626";
+      if (countrySelect) countrySelect.focus();
+      return;
+    }
+    if (markets.length === 0) {
+      status.textContent = "Please select at least one market.";
+      status.style.color = "#DC2626";
+      return;
+    }
+
+    status.style.color = "";
     var submitBtn = formEl.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     status.textContent = "Submitting...";
