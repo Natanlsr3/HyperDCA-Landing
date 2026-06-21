@@ -18,6 +18,18 @@ const SEED_LEADS = [
     createdAt: "2026-06-21T10:23:05.912Z",
     updatedAt: "2026-06-21T10:23:17.132Z",
   },
+  {
+    email: "storm.heinel@imt-bs.eu",
+    country: null,
+    markets: [],
+    createdAt: "2026-06-21T10:37:45.853Z",
+  },
+  {
+    email: "akpabeyc@gmail.com",
+    country: null,
+    markets: [],
+    createdAt: "2026-06-21T10:39:40.659Z",
+  },
 ];
 
 async function getLeads() {
