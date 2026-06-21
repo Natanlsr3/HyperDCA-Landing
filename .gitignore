@@ -1,2 +1,6 @@
 .vercel
 .env*.local
+.env.pulled
+.env.production
+.env.blob
+node_modules

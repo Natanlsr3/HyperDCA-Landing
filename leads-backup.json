@@ -1,0 +1,15 @@
+[
+  {
+    "email": "derson.ramos@gmail.com",
+    "country": null,
+    "markets": [],
+    "createdAt": "2026-06-21T10:21:58.369Z"
+  },
+  {
+    "email": "natan.lasar3@gmail.com",
+    "country": "France",
+    "markets": ["US Stocks", "EU Stocks", "Index Funds", "Crypto", "Semiconductors"],
+    "createdAt": "2026-06-21T10:23:05.912Z",
+    "updatedAt": "2026-06-21T10:23:17.132Z"
+  }
+]
