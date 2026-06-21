@@ -48,6 +48,7 @@ async function saveLeads(leads) {
   await put(BLOB_PATH, JSON.stringify(leads, null, 2), {
     access: "public",
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: "application/json",
   });
 }
